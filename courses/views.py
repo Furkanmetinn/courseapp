@@ -6,11 +6,11 @@ from django.http import HttpResponse
 
 def kurslar(request):
     return HttpResponse('kurs listesi')
-def programlama(request):
-    return HttpResponse('programlama kurs listesi')
-
-def mobiluygulamalar(request):
-    return HttpResponse('mobil uygulamalar kurs listesi')
 
 def details(request):
     return HttpResponse('iletisim')
+
+def getCoursesByCategory(request,category):
+    return HttpResponse(f'{category} kategorisindeki kurs listesi')
+
+
