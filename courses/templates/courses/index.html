@@ -3,6 +3,18 @@
 Kurslar
 {% endblock page_title %}
 {% block content %}
-<h1>kurslar</h1>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-3">
+            {% comment %} menu {% endcomment %}
+        {% include "courses/partials/_categories.html" %}
+         </div>
+
+        <div class="col-9">
+             {% comment %} content {% endcomment %}
+             
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

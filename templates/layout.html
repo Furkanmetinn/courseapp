@@ -9,41 +9,12 @@
 </head>
 <body>
     {% comment %} navbar {% endcomment %}
-    <nav class="navbar navbar-expand-lg bg-primary">
-        <div class="container">
-            <a href="/" class="navbar-brand">Course App</a>
-
-            <ul class="navbar-nav me-auto"><li class="nav-item">
-                <a href="/" class="nav-link">Kurslar</a>
-            </li>
-            <li class="nav-item">
-                <a href="/contact" class="nav-link">İletişim</a>
-            </li>
-            <li class="nav-item">
-                <a href="/about" class="nav-link">Hakkımızda</a>
-            </li></ul>
-        </div>
-    </nav>
+   {% include "partials/_nav.html" %}
    
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-3">
-                {% comment %} menu {% endcomment %}
-            <div class="list-gorup">
-                <a href="" class="list-group-item list-gorup-item-action">Programlama</a>
-                <a href="" class="list-group-item list-gorup-item-action">Web Geliştirme</a>
-                <a href="" class="list-group-item list-gorup-item-action">Mobil Geliştirme</a>
+   {% block content %}{% endblock content %}
+   
 
-            </div>
-            </div>
-
-            <div class="col-9">
-                 {% comment %} content {% endcomment %}
-                 {% block content %}{% endblock content %}
-            </div>
-        </div>
-    </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" ></script>
     {% block js_files %}{% endblock js_files %}
 </body>
 </html>

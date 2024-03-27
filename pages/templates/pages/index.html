@@ -11,8 +11,21 @@ Anasayfa
 
 
 {% block content %}
-<h1>Anasayfa</h1>
-<i class="fa-solid fa-user"></i>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-3">
+            {% comment %} menu {% endcomment %}
+        <div class="list-gorup">
+          {% include "courses/partials/_categories.html" %}
+        </div>
+        </div>
+
+        <div class="col-9">
+             {% comment %} content {% endcomment %}
+             <h1>anasayfa</h1>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 {% block js_files %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" ></script>
