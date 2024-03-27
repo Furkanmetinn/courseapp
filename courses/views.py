@@ -10,14 +10,15 @@ data={
 }
 
 # Create your views here.
-
+def index(request):
+    return render(request,'courses/index.html')
 def kurslar(request):
     list_items=""
     category_list=list(data.keys())
 
     for category in category_list:
         redirect_url=reverse('courses_by_category',args=[category])
-        list_items +="<li><a href='{redirect_url}'>{category}</a></li>"
+        list_items +=f"<li><a href='{redirect_url}'>{category}</a></li>"
 
     html=f"<h1>kurs listesi</h1><ul>{list_items}</ul>"
     return HttpResponse(html)
