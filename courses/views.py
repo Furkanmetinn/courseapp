@@ -4,8 +4,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def home(request):
-    return HttpResponse('anasayfa')
 def kurslar(request):
     return HttpResponse('kurs listesi')
+def programlama(request):
+    return HttpResponse('programlama kurs listesi')
 
+def mobiluygulamalar(request):
+    return HttpResponse('mobil uygulamalar kurs listesi')
+
+def details(request):
+    return HttpResponse('iletisim')
