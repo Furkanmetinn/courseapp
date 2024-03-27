@@ -1,6 +1,6 @@
 from django.shortcuts import redirect,render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-
+from django.urls import reverse
 #Key:value
 data={
     "programlama":"programlama kategorisine ait kurslar",
@@ -28,9 +28,9 @@ def getCoursesByCategoryId(request,category_id):
     category_list=list(data.keys())
     if(category_id>len(category_list)):
        return HttpResponseNotFound("yanlış kategori seçimi")
-    redirect_text=category_list[category_id-1]
+    category_name=category_list[category_id-1]
 
-
-    return redirect('/kurs/kategori/'+redirect_text)
+    redirect_url=reverse('courses_by_category',args=[category_name])
+    return redirect(redirect_url)
 
 
