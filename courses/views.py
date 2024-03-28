@@ -1,3 +1,4 @@
+from datetime import date
 from django.shortcuts import redirect,render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
@@ -9,6 +10,39 @@ data={
     "mobil":"mobil kategorisine ait kurslar",
 }
 
+db={
+    "courses":[
+        {
+            "title":"javascript kursu",
+            "description":"javascript kurs açıklaması",
+            "imageUrl":"https://img-c.udemycdn.com/course/750x422/1258436_2dc3_4.jpg",
+            "slug":"javascript-kursu",
+            "date":date(2022,10,10),
+            "is-active":True
+        },
+         {
+            "title":"python kursu",
+            "description":"python kurs açıklaması",
+            "imageUrl":"https://img-c.udemycdn.com/course/750x422/1258436_2dc3_4.jpg",
+            "slug":"python-kursu",
+            "date":date(2022,12,10),
+            "is-active":True
+
+        },
+         {
+            "title":"web geliştirme kursu",
+            "description":"web geliştirme kurs açıklaması",
+            "imageUrl":"https://img-c.udemycdn.com/course/750x422/1258436_2dc3_4.jpg",
+            "slug":"web-gelistirme-kursu",
+            "date":date(2022,9,10),
+            "is-active":True
+
+        },
+
+    ],
+    "categories":["programlama","web-geliştirme","mbil uygulamalar"]
+
+}
 # Create your views here.
 
 def index(request):
